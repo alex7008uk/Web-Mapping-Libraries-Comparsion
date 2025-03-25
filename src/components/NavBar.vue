@@ -3,8 +3,8 @@ import MapLocationIcon from '@/components/Icon/MapLocationIcon.vue'
 import GithubIcon from '@/components/Icon/GithubIcon.vue'
 
 const NavbarItems = [
-  { name: '地圖主頁', url: '/' },
-  { name: '比較表格', url: '/comparsion' },
+  { name: '體驗套件', url: '/' },
+  { name: '比較套件', url: '/comparsion' },
 ]
 </script>
 
@@ -13,7 +13,7 @@ const NavbarItems = [
     <!-- nav 標題 -->
     <h1 class="navbar-title">
       <MapLocationIcon size="1.5rem" />
-      地圖套件比較
+      地圖套件體驗與比較
     </h1>
     <!-- nav 欄位 -->
     <div class="navbar-list">
