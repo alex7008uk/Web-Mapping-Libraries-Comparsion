@@ -1,5 +1,5 @@
 <script setup>
-import { defineProps, computed } from 'vue'
+import { computed } from 'vue'
 
 // 傳入的樣式參數
 const props = defineProps({
