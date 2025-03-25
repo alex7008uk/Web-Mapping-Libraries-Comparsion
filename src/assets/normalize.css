@@ -1,6 +1,9 @@
 body {
   margin: 0;
   background-color: hsl(0, 0%, 80%);
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 ul,
