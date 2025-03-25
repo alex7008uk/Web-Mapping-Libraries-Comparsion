@@ -1,7 +1,8 @@
 <script setup>
 import { ref } from 'vue'
 import { LMap, LTileLayer, LControl } from '@vue-leaflet/vue-leaflet'
-import { useMapDraw } from '@/composables/useMapDraw'
+import { useLeafletDraw } from '@/composables/useLeafletDraw'
+import LeafletMapPanel from '@/components/HomePage/LeafletMap/LeafletMapPanel.vue'
 
 // --------------------- 地圖設置 ---------------------
 const map = ref(null) // map 本體
@@ -14,8 +15,7 @@ const mapConfig = ref({
 
 // --------------------- 控制面板 ---------------------
 // 初始化繪製物件, 開關數化模式
-const { initDrawControl, toggleMode } = useMapDraw()
-const lineType = ref('') // 折線樣式
+const { initDrawControl, toggleMode, setLineType } = useLeafletDraw()
 </script>
 
 <template>
@@ -31,30 +31,13 @@ const lineType = ref('') // 折線樣式
       layer-type="base"
       name="OpenStreetMap"
     />
-    <l-control class="map-control">
-      <div>
-        <select v-model="lineType">
-          <option disabled value="">---選擇樣式---</option>
-          <option value="1">線+點</option>
-          <option value="2">線+數字</option>
-        </select>
-      </div>
-      <div><button :disabled="!lineType" @click="toggleMode('polyline')">畫圖模式</button></div>
-      <div><button>清除模式</button></div>
-      <hr />
-      <div><button>載入巨量數據</button></div>
+    <l-control>
+      <LeafletMapPanel :toggleMode="toggleMode" :setLineType="setLineType" />
     </l-control>
   </l-map>
 </template>
 
 <style scoped>
-.map-control {
-  padding: 1em;
-  background-color: hsl(0, 0%, 95%);
-  border: 0.15rem solid hsl(0, 0%, 72%);
-  border-radius: 0.5rem;
-}
-
 :deep(.leaflet-editing-icon) {
   margin-left: -5px !important;
   margin-top: -5px !important;

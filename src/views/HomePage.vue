@@ -1,7 +1,7 @@
 <script setup>
 import HomeLayout from '@/components/HomePage/HomeLayout.vue'
 import HomeTab from '@/components/HomePage/HomeTab.vue'
-import LeafletMap from '@/components/HomePage/LeafletMap.vue'
+import LeafletMap from '@/components/HomePage/LeafletMap/LeafletMap.vue'
 import OpenLayersMap from '@/components/HomePage/OpenLayersMap.vue'
 import MapLibreMap from '@/components/HomePage/MapLibreMap.vue'
 import { storeToRefs } from 'pinia'
