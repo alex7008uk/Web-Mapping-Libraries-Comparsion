@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  background-color: hsl(0, 0%, 80%);
+  background-color: #cccccc;
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
