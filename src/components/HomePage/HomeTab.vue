@@ -12,12 +12,9 @@ const tabItems = [
   { tabName: 'MapLibre', componentName: 'MapLibreMap' },
 ]
 
-function isActive(componentName) {
-  return componentName === tab.value
-}
-
 function getTabClass(componentName) {
-  return ['tab-item', { 'tab-item--selected': isActive(componentName) }]
+  const isActive = componentName === tab.value
+  return ['tab-item', { 'tab-item--selected': isActive }]
 }
 </script>
 
