@@ -15,6 +15,8 @@ const components = { LeafletMap, OpenLayersMap, MapLibreMap }
 <template>
   <HomeLayout>
     <HomeTab />
-    <component :is="components[tab]" />
+    <KeepAlive>
+      <component :is="components[tab]" />
+    </KeepAlive>
   </HomeLayout>
 </template>
