@@ -13,10 +13,10 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@geoman-io/leaflet-geoman-free": "^2.18.3",
     "@vue-leaflet/vue-leaflet": "^0.10.1",
     "leaflet": "^1.9.4",
-    "leaflet-draw": "^1.0.4",
-    "leaflet-snap": "^0.0.4",
+    "leaflet-textpath": "^1.2.3",
     "pinia": "^3.0.1",
     "vue": "^3.5.13",
     "vue-router": "^4.5.0"
