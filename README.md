@@ -1,35 +1,25 @@
 # Web-Mapping-Libraries-Comparsion
 
-This template should help get you started developing with Vue 3 in Vite.
+## 專案介紹
 
-## Recommended IDE Setup
+目前手上 leaflet 項目有數化地圖的需求, 在爬文時看到評論說 OpenLayers 的數化功能不錯用, 就想比較看看各個地圖函式庫在數化地圖跟載入大量數據的區別,
+挑選了三個主流地圖函式庫來體驗: 1.Leaflet 2.OpenLayers 3.MapLibre。
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+實作功能:
 
-## Customize configuration
+- 數化繪製地圖
+- 載入/移除大量數據
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+Demo:
 
-## Project Setup
+## 使用工具
 
-```sh
-npm install
-```
+leaflet:
 
-### Compile and Hot-Reload for Development
+1. leaflet(函式庫本體)
+2. leaflet geoman(數化套件)
+3. leaflet textpath(polyline樣式)
 
-```sh
-npm run dev
-```
+## todo:
 
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+- 繪製網頁 ico, logo
