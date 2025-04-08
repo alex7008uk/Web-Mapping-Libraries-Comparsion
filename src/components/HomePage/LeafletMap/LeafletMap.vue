@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import { LMap, LTileLayer, LControl } from '@vue-leaflet/vue-leaflet'
-import { useLeafletDraw } from '@/composables/useLeafletDraw'
+import { useGeomanDraw } from '@/composables/useGeomanDraw'
 import LeafletMapPanel from '@/components/HomePage/LeafletMap/LeafletMapPanel.vue'
 
 // --------------------- 地圖設置 ---------------------
@@ -14,17 +14,11 @@ const mapConfig = ref({
 })
 
 // --------------------- 控制面板 ---------------------
-// 初始化繪製物件, 開關數化模式
-const { initDrawControl, toggleMode, setLineType } = useLeafletDraw()
+const { currentDrawMode, initMapEvent, toggleMode } = useGeomanDraw()
 </script>
 
 <template>
-  <l-map
-    ref="map"
-    v-model:zoom="mapConfig.zoom"
-    :center="mapConfig.center"
-    @ready="initDrawControl"
-  >
+  <l-map ref="map" v-model:zoom="mapConfig.zoom" :center="mapConfig.center" @ready="initMapEvent">
     <l-tile-layer
       :url="mapConfig.tileUrl"
       :attribution="mapConfig.attribution"
@@ -32,7 +26,7 @@ const { initDrawControl, toggleMode, setLineType } = useLeafletDraw()
       name="OpenStreetMap"
     />
     <l-control>
-      <LeafletMapPanel :toggleMode="toggleMode" :setLineType="setLineType" />
+      <LeafletMapPanel :map="map" :currentDrawMode="currentDrawMode" :toggleMode="toggleMode" />
     </l-control>
   </l-map>
 </template>
@@ -43,7 +37,7 @@ const { initDrawControl, toggleMode, setLineType } = useLeafletDraw()
   margin-top: -5px !important;
   height: 0.5rem !important;
   width: 0.5rem !important;
-  background-color: #ff00a7;
+  background-color: #2f6279;
   border-radius: 50%;
   display: inline-block;
 }
