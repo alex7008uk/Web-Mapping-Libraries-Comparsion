@@ -3,6 +3,7 @@ const props = defineProps({
   map: { type: Object },
   currentDrawMode: { type: String },
   toggleMode: { type: Function },
+  leafletDataUtils: { type: Object },
 })
 
 const drawButtonList = [
@@ -31,7 +32,12 @@ function getTabClass(buttonMode) {
     </button>
     <div class="map-panel__divider"></div>
     <!-- 載入相關按鈕 -->
-    <button class="map-panel__button">載入巨量數據</button>
+    <button class="map-panel__button" @click="props.leafletDataUtils.addGeojsonLayer(props.map)">
+      載入巨量數據
+    </button>
+    <button class="map-panel__button" @click="props.leafletDataUtils.removeGeojsonLayer(props.map)">
+      移除巨量數據
+    </button>
   </div>
 </template>
 

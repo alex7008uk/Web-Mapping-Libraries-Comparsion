@@ -3,12 +3,13 @@ import { ref } from 'vue'
 import { LMap, LTileLayer, LControl } from '@vue-leaflet/vue-leaflet'
 import { useGeomanDraw } from '@/composables/useGeomanDraw'
 import LeafletMapPanel from '@/components/HomePage/LeafletMap/LeafletMapPanel.vue'
+import { leafletDataUtils } from '@/utils/largeDataUtils'
 
 // --------------------- 地圖設置 ---------------------
 const map = ref(null) // map 本體
 const mapConfig = ref({
-  zoom: 10, // map 縮放大小
-  center: [47.41322, -1.219482], // 地圖中心
+  zoom: 6, // map 縮放大小
+  center: [37.3740094, -116.494107], // 地圖中心
   tileUrl: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', // 瓦磚來源
   attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>', // 貢獻者
 })
@@ -26,7 +27,12 @@ const { currentDrawMode, initMapEvent, toggleMode } = useGeomanDraw()
       name="OpenStreetMap"
     />
     <l-control>
-      <LeafletMapPanel :map="map" :currentDrawMode="currentDrawMode" :toggleMode="toggleMode" />
+      <LeafletMapPanel
+        :map="map"
+        :currentDrawMode="currentDrawMode"
+        :toggleMode="toggleMode"
+        :leafletDataUtils="leafletDataUtils"
+      />
     </l-control>
   </l-map>
 </template>
